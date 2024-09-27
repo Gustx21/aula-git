@@ -30,7 +30,7 @@
     
     E várias outras opções também, como o `git log --graph`, que exibirá uma linha do nosso *log*, e isso será ainda mais útil quando falarmos um pouco sobre *branches*.
     
-    Mas, essencialmente, se percorro isso até a parte em que temos um `merge`, que ele representa graficamente uma linha do tempo se desviando para outro ponto e depois retornando à nossa linha principal.
+    Mas, essencialmente, se percorre isso até a parte em que temos um `merge`, que ele representa graficamente uma linha do tempo se desviando para outro ponto e depois retornando à nossa linha principal.
     
     Há ainda uma opção interessante, que é o `--pretty` ou `--format`. Ambos são sinônimos.
     
