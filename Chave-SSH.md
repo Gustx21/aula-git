@@ -6,11 +6,12 @@ Ao vincular um repositório remoto ao nosso repositório local, via comando `gi
 
 Antes de executar o comando `git push`, precisamos gerar uma chave SSH. A geração da chave é feita via terminal, com o comando `ssh-keygen -t ed25519 -C "SEU EMAIL AQUI"`:
 
-![Untitled](Untitled.png)
+![Exemplo sobre resposta no terminal](./imagens/exemplo1.png)
 
 Repare, na imagem anterior, que ao executar o comando para gerar uma chave SSH, uma pergunta foi feita e o terminal fica travado esperando nossa resposta:
 
 ```powershell
+
 Generatingpublic/private ed25519key pair.
 Enter filein whichto save thekey (/home/rodrigo/.ssh/id_ed25519):
 
@@ -21,6 +22,7 @@ Essa primeira pergunta é para indicarmos o **diretório** em nosso computador
 Após apertar a tecla `enter`, uma nova pergunta será apresentada no terminal:
 
 ```bash
+
 Enterpassphrase (enterfor no passphrase):
 
 ```
@@ -37,6 +39,7 @@ Enter same passphrase again
 A chave será gerada e a seguinte mensagem será exibida no terminal:
 
 ```bash
+
 Your identification has been savedin /home/rodrigo/.ssh/id_ed25519
 Yourpublickey has been savedin /home/rodrigo/.ssh/id_ed25519.pub
 Thekey fingerprint is:
@@ -61,13 +64,13 @@ Na primeira linha da mensagem você consegue identificar o diretório no seu com
 > Observação: Nesse diretório serão gerados dois arquivos que representam a chave SSH, sendo um para a chave privada (arquivo id_ed25519) e o outro para a chave pública (id_ed25519.pub).
 > 
 
-## **Cadastrando a chave SSH no GitHub**
+## Cadastrando a chave SSH no GitHub
 
 Após gerar a chave, precisamos cadastrá-la em nossa conta do GitHub, para que assim o GitHub consiga nos identificar e autenticar ao executar o comando `git push` de nosso computador.
 
 Acesse a [página de chaves SSH](https://github.com/settings/keys) de sua conta no GitHub e clique no botão **New SSH key** ou **Nova chave SSH** para realizar o cadastro da chave:
 
-![Untitled](Untitled%201.png)
+![Add chave SSH](./imagens/exemplo2.png)
 
 Repare que o formulário exibido na imagem anterior contém três campos:
 
