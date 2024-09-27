@@ -1,3 +1,5 @@
+![Ícone de Git](https://img.icons8.com/?size=100&id=20906&format=png&color=000000)
+
 # Diferentes visualizações com git log
 
 - **Alterando a Visualização do log**
