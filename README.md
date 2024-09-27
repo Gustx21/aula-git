@@ -251,7 +251,7 @@ Com isso, ele pegou aquele *commit* com a mensagem "Quebrando linha no título
     
     Você verá uma lista de commits em ordem reversa (o commit mais recente aparece primeiro).
     
-    :link: [Diferentes visualizações com git log](https://www.notion.so/Diferentes-visualiza-es-com-git-log-c1257e6c87014d7d889a9d8b1289f9ca?pvs=21)
+    :link: [Diferentes visualizações com git log](./Diferentes%20visualizações%20com%20git%20log.md)
     
 2. **Git Diff**
     
