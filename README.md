@@ -78,6 +78,25 @@ Ao executar o comando, note que a saída no terminal foi a mensagem **Initializ
 >```
 > isso significa que o diretório atual **não é** um repositório Git e você pode então executar o comando ***git init***.
 
+# Configurando o Git
+Para configurar seu Git com nome de usuário e e-mail, você usará os seguintes comandos:
+
+1. **Defina seu nome de usuário**:
+   ```bash
+   git config --global user.name "Seu Nome"
+   ```
+
+2. **Defina seu e-mail**:
+   ```bash
+   git config --global user.email "seuemail@example.com"
+   ```
+
+Esses comandos vão configurar seu nome e e-mail para todos os repositórios no seu sistema. Se quiser configurar para um repositório específico, remova a opção `--global`.
+
+3. **Para verificar suas configurações**:
+   ```bash
+   git config --global --list
+   ```
 
 # Repositório Remoto
 
