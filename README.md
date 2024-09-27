@@ -83,7 +83,7 @@ fatal: not a git repository (or any of the parent directories): .git
 
 Esse comando tem algumas variações e parâmetros opcionais que podem ser úteis em certas situações. Confira a seguir exemplos de uso desse comando:
 
-:fire: [Chave SSH](https://www.notion.so/Chave-SSH-077841142ffc4988b24fa49be0b80902?pvs=21)
+:fire: [Chave SSH](./Chave-SSH.md)
 
 1.  Adicionar um repositório remoto:
     
