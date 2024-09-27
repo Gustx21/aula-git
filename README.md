@@ -54,7 +54,7 @@ Repare na imagem anterior que o comando `git init` foi executado no terminal d
 Ao executar o comando, note que a saída no terminal foi a mensagem **Initialized empty Git repository in /home/rodrigo/Projetos/alura/meu-projeto/.git/**. Essa mensagem indica que o comando foi executado corretamente e um repositório local do Git foi criado com sucesso nesse diretório. A partir desse ponto, já podemos trabalhar no projeto, adicionando arquivos, realizando modificações e registrando as mudanças no Git.
 
 
-### Cuidados com o Comando git init :warning:
+### :warning: Cuidados com o Comando git init
 
 > Aprendemos que o comando *`git init`* serve para criar um novo repositório Git e por isso deve ser executado apenas uma única vez. Ou seja, se um diretório já for um repositório Git, não faz sentido rodar novamente o comando ***git init***. Esse é um erro bastante comum de ser cometido.
 >
@@ -83,7 +83,7 @@ fatal: not a git repository (or any of the parent directories): .git
 
 Esse comando tem algumas variações e parâmetros opcionais que podem ser úteis em certas situações. Confira a seguir exemplos de uso desse comando:
 
-:git: [Chave SSH](https://www.notion.so/Chave-SSH-077841142ffc4988b24fa49be0b80902?pvs=21)
+:fire: [Chave SSH](https://www.notion.so/Chave-SSH-077841142ffc4988b24fa49be0b80902?pvs=21)
 
 1.  Adicionar um repositório remoto:
     
@@ -219,7 +219,7 @@ Em situações de colaboração em equipe, é essencial manter a integridade do 
 É recomendável evitar a modificação excessiva do histórico de commits, uma vez que isso pode tornar o histórico confuso. O histórico deve ser uma representação precisa do progresso do projeto ao longo do tempo.
 ```
 
-:git: [Commits semânticos](https://www.notion.so/Commits-sem-nticos-0dc9564978234bdfa2d455fc5f2a9f93?pvs=21)
+:fire: [Commits semânticos](https://www.notion.so/Commits-sem-nticos-0dc9564978234bdfa2d455fc5f2a9f93?pvs=21)
 
 ## Pegando commit
 
@@ -251,7 +251,7 @@ Com isso, ele pegou aquele *commit* com a mensagem "Quebrando linha no título
     
     Você verá uma lista de commits em ordem reversa (o commit mais recente aparece primeiro).
     
-    :git: [Diferentes visualizações com git log](https://www.notion.so/Diferentes-visualiza-es-com-git-log-c1257e6c87014d7d889a9d8b1289f9ca?pvs=21)
+    :fire: [Diferentes visualizações com git log](https://www.notion.so/Diferentes-visualiza-es-com-git-log-c1257e6c87014d7d889a9d8b1289f9ca?pvs=21)
     
 2. **Git Diff**
     
@@ -375,7 +375,7 @@ Com isso, ele pegou aquele *commit* com a mensagem "Quebrando linha no título
     
     Neste exemplo, `<commit_id>` é o identificador único do commit ao qual você deseja reverter o seu repositório. Você pode obter o `commit_id` usando o comando `git log`.
     
-    :git: [Diferentes modos do git reset](https://www.notion.so/Diferentes-modos-do-git-reset-6b80ff7f53ca4f44af7391618824b765?pvs=21)
+    :fire: [Diferentes modos do git reset](https://www.notion.so/Diferentes-modos-do-git-reset-6b80ff7f53ca4f44af7391618824b765?pvs=21)
     
 
 # Git Branch
@@ -583,9 +583,11 @@ Queremos marcar um ponto no commit `Quebrando a linha do script` e torná-lo u
 Uma tag no Git é criada através do comando `git tag nome_da_tag`, que rodamos no Terminal. Por exemplo, vamos rodar o comando `git tag v0.1.0`. Assim, criamos uma tag na nossa `HEAD`, ou seja, no momento mais recente da branch que tivermos feito o commit. Após criarmos a tag e rodarmos o comando `git log` de novo, recebemos as informações do commit com a nossa tag
 
 ```powershell
+
 502afbc6 (HEAD -> main) Removendo quebra de linha
 c53eb16c (tag: v0.1.0, origin/nova-funcionalidade, origin/main, origin/HEAD, nova-funcionalidade) Quebrando linha do script
 bc493a6c Corrigindo indentação
+
 ```
 
 ## **Criando tags para commits fora da HEAD**
@@ -623,3 +625,6 @@ Ao executarmos esse comando, temos uma tag com tem informações a mais do que a
 [Colaboração](https://www.notion.so/Colabora-o-2af973e3a0344abd8f897e800e209f6a?pvs=21)
 
 [Conflitos no VSCode](https://www.notion.so/Conflitos-no-VSCode-fd69d7849ac54ece9d843b0f6a5374cc?pvs=21)
+
+## Crédito
+Copyright (C) 2024 by Gustavo André
