@@ -621,10 +621,10 @@ git tag -a v0.1.1 -m "Lançamento da versão 0.1.1"
 Ao executarmos esse comando, temos uma tag com tem informações a mais do que apenas um commit. Faremos o *push* dessa tag, com o comando `git push origin v0.1.1` e retornaremos a página de tags do GitHub.
 
 ## Para saber mais:
-
-[Colaboração](https://www.notion.so/Colabora-o-2af973e3a0344abd8f897e800e209f6a?pvs=21)
-
-[Conflitos no VSCode](https://www.notion.so/Conflitos-no-VSCode-fd69d7849ac54ece9d843b0f6a5374cc?pvs=21)
+- [Aprenda Git em 30 minutos](https://youtu.be/Zwv9qRyVeU4?feature=shared)
+- [O que é Git com Raffaela - Parte 1](https://youtu.be/DqTITcMq68k?feature=shared)
+- [Como usar Git na prática com Raffaela - Parte 2](https://youtu.be/UBAX-13g8OM?feature=shared)
+- [Aprenda Git do zero](https://youtu.be/pyM5QLS2h6M?feature=shared)
 
 ## Crédito
 Copyright (C) 2024 by Gustavo André
