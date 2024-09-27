@@ -54,8 +54,8 @@ Repare na imagem anterior que o comando `git init` foi executado no terminal d
 Ao executar o comando, note que a saída no terminal foi a mensagem **Initialized empty Git repository in /home/rodrigo/Projetos/alura/meu-projeto/.git/**. Essa mensagem indica que o comando foi executado corretamente e um repositório local do Git foi criado com sucesso nesse diretório. A partir desse ponto, já podemos trabalhar no projeto, adicionando arquivos, realizando modificações e registrando as mudanças no Git.
 
 
-### :warning: Cuidados com o Comando git init
-
+>### :warning: Cuidados com o Comando git init
+>
 > Aprendemos que o comando *`git init`* serve para criar um novo repositório Git e por isso deve ser executado apenas uma única vez. Ou seja, se um diretório já for um repositório Git, não faz sentido rodar novamente o comando ***git init***. Esse é um erro bastante comum de ser cometido.
 >
 > Se você executar o comando *`git init`* em um diretório que já foi inicializado como um repositório Git, a seguinte mensagem será exibida:
@@ -268,7 +268,7 @@ Com isso, ele pegou aquele *commit* com a mensagem "Quebrando linha no título
     
     Para analisar a diferença entre esses dois *commits* específicos, precisamos incluir os três *commits* em nossa análise. Podemos fazer isso utilizando o comando `git diff`.
     
-    Primeiro, copiamos o *hash* do *commit* mais antigo que desejamos comparar, e depois colamos esse *hash* seguido de "`..`": `git diff 5880fc1..`. Em seguida, copiamos o *hash* do *commit* mais recente que queremos comparar.
+    Primeiro, copiamos o *hash* do *commit* mais antigo que desejamos comparar. Em seguida, copiamos o *hash* do *commit* mais recente que queremos comparar.
     
     ```powershell
 
@@ -475,7 +475,7 @@ O comando `git stash` é usado quando você quer registrar o estado atual do seu
     ```powershell
 
     git stash push -m "descrição do stash"
-    
+
     ```
     
 - Apply
