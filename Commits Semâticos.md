@@ -1,3 +1,5 @@
+![Ícone de Git](https://img.icons8.com/?size=100&id=20906&format=png&color=000000)
+
 # Commits semânticos
 
 Commits semânticos são uma convenção simples para ser utilizadas nas mensagens de commit. Esses commits auxiliarão a entenderem de forma cooperativa e fácil quais alterações foram realizadas no trecho de código que foi commitado.
