@@ -83,7 +83,7 @@ fatal: not a git repository (or any of the parent directories): .git
 
 Esse comando tem algumas variações e parâmetros opcionais que podem ser úteis em certas situações. Confira a seguir exemplos de uso desse comando:
 
-:fire: [Chave SSH](./Chave-SSH.md)
+:link: [Chave SSH](./Chave-SSH.md)
 
 1.  Adicionar um repositório remoto:
     
@@ -219,7 +219,7 @@ Em situações de colaboração em equipe, é essencial manter a integridade do 
 É recomendável evitar a modificação excessiva do histórico de commits, uma vez que isso pode tornar o histórico confuso. O histórico deve ser uma representação precisa do progresso do projeto ao longo do tempo.
 ```
 
-:fire: [Commits semânticos](https://www.notion.so/Commits-sem-nticos-0dc9564978234bdfa2d455fc5f2a9f93?pvs=21)
+:link: [Commits semânticos](./Commits%20Semâticos.md)
 
 ## Pegando commit
 
@@ -251,7 +251,7 @@ Com isso, ele pegou aquele *commit* com a mensagem "Quebrando linha no título
     
     Você verá uma lista de commits em ordem reversa (o commit mais recente aparece primeiro).
     
-    :fire: [Diferentes visualizações com git log](https://www.notion.so/Diferentes-visualiza-es-com-git-log-c1257e6c87014d7d889a9d8b1289f9ca?pvs=21)
+    :link: [Diferentes visualizações com git log](https://www.notion.so/Diferentes-visualiza-es-com-git-log-c1257e6c87014d7d889a9d8b1289f9ca?pvs=21)
     
 2. **Git Diff**
     
@@ -375,7 +375,7 @@ Com isso, ele pegou aquele *commit* com a mensagem "Quebrando linha no título
     
     Neste exemplo, `<commit_id>` é o identificador único do commit ao qual você deseja reverter o seu repositório. Você pode obter o `commit_id` usando o comando `git log`.
     
-    :fire: [Diferentes modos do git reset](https://www.notion.so/Diferentes-modos-do-git-reset-6b80ff7f53ca4f44af7391618824b765?pvs=21)
+    :link: [Diferentes modos do git reset](./Diferentes%20modos%20do%20git%20reset%20.md)
     
 
 # Git Branch
