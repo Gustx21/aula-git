@@ -473,7 +473,9 @@ O comando `git stash` é usado quando você quer registrar o estado atual do seu
     O comando `git stash push -m "<mensagem>"` é utilizado para fazer um stash de suas alterações e dar a ele uma descrição personalizada. Este comando é útil para quando você tem múltiplos stashes e quer ser capaz de distinguir entre eles facilmente.
     
     ```powershell
+
     git stash push -m "descrição do stash"
+    
     ```
     
 - Apply
@@ -533,21 +535,13 @@ O comando `git stash` é usado quando você quer registrar o estado atual do seu
 
 Então, nosso `git status` tem modificações. E o que queremos fazer é **desfazer essas modificações**.
 
-```
-📌
-
-Podemos fazer o `restore` para algum estado específico, mas se não informarmos o estado, isso significa que a restauração será feita sem o que foi modificado. Ou seja, o último commit do nosso branch atual.
-
-```
+> :pushpin: Podemos fazer o `restore` para algum estado específico, mas se não informarmos o estado, isso significa que a restauração será feita sem o que foi modificado. Ou seja, o último commit do nosso branch atual.
+>
 
 Então, podemos fazer de `app.js` e de `index.html` um de cada vez. Ou fazer do ponto (`git restore .`). O `git restore .` restaura todo o projeto também. E esse ponto não é um significado especial do `git`.
 
-```
-📌
-
-Na linha de comando, o ponto significa o diretório atual. Então, estamos fazendo o restore de tudo na pasta atual.
-
-```
+> :pushpin: Na linha de comando, o ponto significa o diretório atual. Então, estamos fazendo o restore de tudo na pasta atual.
+>
 
 Então, esse `git restore` vai fazer um `Ctrl + Z` no nosso projeto. Assim, as linhas que adicionamos no `index` sumiram, e aquelas alterações no nosso `app.js` também sumiram.
 
