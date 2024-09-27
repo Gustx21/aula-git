@@ -59,23 +59,23 @@ Ao executar o comando, note que a saída no terminal foi a mensagem **Initializ
 > Aprendemos que o comando *`git init`* serve para criar um novo repositório Git e por isso deve ser executado apenas uma única vez. Ou seja, se um diretório já for um repositório Git, não faz sentido rodar novamente o comando ***git init***. Esse é um erro bastante comum de ser cometido.
 >
 > Se você executar o comando *`git init`* em um diretório que já foi inicializado como um repositório Git, a seguinte mensagem será exibida:
-
-```powershell
-
-Reinitialized existing Git repository in /home/rodrigo/Projetos/alura/meu-projeto/.git/
-
-```
-
+>
+>```powershell
+>
+>Reinitialized existing Git repository in /home/rodrigo/Projetos/alura/meu-projeto/.git/
+>
+>```
+>
 > Isso indica que o Git **reinicializou** um repositório já existente, ou seja, o comando *`git init`* foi executado em um diretório que já era um repositório Git.
 >
 > Caso você tenha cometido esse equívoco, não precisa se preocupar, pois todo o histórico de mudanças e commits no projeto não será apagado. O Git detecta que o diretório já era um repositório Git e com isso o comando não tem efeito nenhum.
 >
 > Na dúvida, antes de executar o comando *`git init`*, execute primeiramente o comando ***git status***. Se aparecer a mensagem:
-```powershell
-
-fatal: not a git repository (or any of the parent directories): .git
-
-```
+>```powershell
+>
+>fatal: not a git repository (or any of the parent directories): .git
+>
+>```
 > isso significa que o diretório atual **não é** um repositório Git e você pode então executar o comando ***git init***.
 
 
@@ -209,15 +209,14 @@ git commit --amend -m <mensagem>
 
 O comando indica ao Git que não queremos fazer um novo commit, mas alterar o anterior. Então é só passar o ***-m***, com o texto da mensagem correta.
 
-```
-⚠️ É importante destacar que os comandos do Git que permitem modificar o histórico de commits devem ser utilizados com **prudência** e apenas quando o commit em questão ainda **não foi enviado ao repositório remoto**, ou seja, quando ele existe apenas no seu repositório local.
+>⚠️ É importante destacar que os comandos do Git que permitem modificar o histórico de commits devem ser utilizados com **prudência** e apenas quando o commit em questão ainda **não foi enviado ao repositório remoto**, ou seja, quando ele existe apenas no seu repositório local.
+>
+>Modificar um commit que já se tornou público, ou seja, aquele que já foi enviado ao GitHub ou a qualquer outro repositório remoto, pode acarretar problemas consideráveis na colaboração com as outras pessoas e na integridade do histórico de um projeto.
+>
+>Em situações de colaboração em equipe, é essencial manter a integridade do histórico de commits, pois qualquer modificação em um commit que outras pessoas estejam trabalhando pode resultar em conflitos e dificuldades na colaboração.
+>
+>É recomendável evitar a modificação excessiva do histórico de commits, uma vez que isso pode tornar o histórico confuso. O histórico deve ser uma representação precisa do progresso do projeto ao longo do tempo.
 
-Modificar um commit que já se tornou público, ou seja, aquele que já foi enviado ao GitHub ou a qualquer outro repositório remoto, pode acarretar problemas consideráveis na colaboração com as outras pessoas e na integridade do histórico de um projeto.
-
-Em situações de colaboração em equipe, é essencial manter a integridade do histórico de commits, pois qualquer modificação em um commit que outras pessoas estejam trabalhando pode resultar em conflitos e dificuldades na colaboração.
-
-É recomendável evitar a modificação excessiva do histórico de commits, uma vez que isso pode tornar o histórico confuso. O histórico deve ser uma representação precisa do progresso do projeto ao longo do tempo.
-```
 
 :link: [Commits semânticos](./Commits%20Semâticos.md)
 
@@ -299,10 +298,7 @@ Com isso, ele pegou aquele *commit* com a mensagem "Quebrando linha no título
     
     Desejamos compreender as alterações realizadas neste *commit* específico, independentemente de quem o tenha feito. Solicitaremos ao *Git* que nos apresente o conteúdo e os detalhes desse *commit*.
     
-    Para isso, copiaremos o *hash* correspondente e digitaremos `git show`, seguido do respectivo *hash*.
-    
-    > git show {hash do commit}
-    > 
+    Para isso, copiaremos o *hash* correspondente e digitaremos `git show`, seguido do respectivo *hash*: `git show {hash do commit}`
     
     ```powershell
 
