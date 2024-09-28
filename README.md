@@ -241,20 +241,6 @@ O comando indica ao Git que não queremos fazer um novo commit, mas alterar o an
 
 :link: [Commits semânticos](./Commits%20Semâticos.md)
 
-## Pegando commit
-
-Então, queremos buscar um *commit*, e o nome disso é `cherry-pick`. Vamos executar o `git cherry-pick` com o *hash* daquele *commit*.
-
-```powershell
-
-git cherry-pick 609bc79b23305a1db648811ec72ec067e1806df
-
-```
-
-O que isso vai fazer? Vai pegar o *commit* com esse *hash* e aplicar no *branch* atual.
-
-Com isso, ele pegou aquele *commit* com a mensagem "Quebrando linha no título". Podemos conferir que a modificação já foi aplicada ao `index.html`, pois o título está em uma nova linha
-
 ## Exibindo Alterações
 
 1. **Git Log**
@@ -382,7 +368,7 @@ Com isso, ele pegou aquele *commit* com a mensagem "Quebrando linha no título
     
 2. **Git Reset**
     
-    O comando **`*git reset* [<modo>] [<commit>]`** é utilizado para desfazer mudanças no seu repositório Git. Este comando pode ser usado de três formas diferentes, dependendo do argumento que você passar:
+    O comando **`*git reset [<modo>] [<commit>]`** move a referência do branch atual para um commit específico, podendo alterar o estado do índice (staging area) e do diretório de trabalho. Melhor para desfazer commits locais que ainda não foram compartilhados com outros. Pode ser usado para remover commits da história. Este comando pode ser usado de três formas diferentes, dependendo do argumento que você passar:
     
     ```powershell
 
@@ -395,7 +381,7 @@ Com isso, ele pegou aquele *commit* com a mensagem "Quebrando linha no título
     :link: [Diferentes modos do git reset](./Diferentes%20modos%20do%20git%20reset%20.md)
     
 
-# Git Branch
+# Ramificação
 
 O comando `git branch` é usado para criar, listar e excluir branches. Um branch é essencialmente um ponteiro para um commit específico. Trabalhar com branches permite que você isole seu trabalho sem afetar o branch principal.
 
@@ -411,7 +397,7 @@ Neste exemplo, `nome-do-branch` é o nome do novo branch que você está criando
 - **git branch <nome-do-branch>**: Cria um novo branch com o nome especificado.
 - **git branch -d <nome-do-branch>**: Exclui o branch especificado.
 
-# Git Merge
+# Mesclagem
 
 O comando `git merge` é usado para combinar as alterações de dois branches diferentes. Quando você executa `git merge`, o Git procura o commit mais recente que é comum aos dois branches. Em seguida, ele cria um novo "commit de merge" que inclui as alterações de ambos os branches.
 
@@ -458,8 +444,7 @@ git switch -c nova-funcionalidade
 
 Ao realizar o `rebase`, todos os commits da outra *branch* são adicionados **antes** do primeiro commit da nossa *branch* atual, reescrevendo a história. Isso faz com que novas alterações possam ser integradas à nossa branch e permite que quando formos realizar o `merge`, não seja necessário um *merge commit*, garantindo o *fast forward*.
 
-Para utilizar o `git rebase`, primeiro precisamos mudar para o branch que queremos rebase. Suponha que temos dois branches, `master` e `feature`. Se queremos rebase o branch `feature` na `master`, faríamos o seguinte:
-
+Para utilizar o `git rebase`, primeiro precisamos mudar para o branch principal. Suponha que temos dois branches, `master` e `feature`. Se mesclar o branch `feature` na `master:
 ```powershell
 
 git checkout feature
@@ -481,13 +466,13 @@ Isso fará com que o branch `feature` pareça que foi criado a partir do último
     
     Se um commit específico está causando problemas durante o rebase, você pode usar `git rebase --skip` para ignorar esse commit.
     
-- **--interactive ou -i**: Este modo permite que você tenha mais controle sobre o processo de rebase. Ele vai abrir um editor onde você pode decidir o que fazer com cada commit (mantê-lo, ignorá-lo, combiná-lo com outro, etc.).
+- **--interactive ou -i**: Este modo permite que tenha mais controle sobre o processo de rebase. Ele vai abrir um editor onde decide o que fazer com cada commit (mantê-lo, ignorá-lo, combiná-lo com outro, etc.).
 
-Note que o rebase é uma ferramenta poderosa, mas também pode ser perigosa se mal utilizada. É importante entender como ele funciona antes de começar a usá-lo no seu fluxo de trabalho.
+Note que o rebase é uma ferramenta poderosa, mas também pode ser perigoso se mal utilizada. É importante entender como ele funciona antes de começar a usá-lo no seu fluxo de trabalho.
 
 # Git Stash
 
-O comando `git stash` é usado quando você quer registrar o estado atual do seu diretório de trabalho e do índice, para voltar a ele mais tarde. Em outras palavras, quando você está no meio de algo e precisa mudar de contexto, o `git stash` leva o trabalho sujo e o guarda, permitindo que você aplique as mesmas mudanças mais tarde.
+O comando `git stash` é usado quando você quer registrar o estado atual do seu diretório de trabalho e do índice, para voltar a ele mais tarde. Em outras palavras, quando está no meio de algo e precisa mudar de contexto, o `git stash` leva o trabalho sujo e o guarda, permitindo que aplique as mesmas mudanças mais tarde.
 
 - Push
     
@@ -543,7 +528,7 @@ O comando `git stash` é usado quando você quer registrar o estado atual do seu
     
 - **List**
     
-    O comando `git stash list` é usado para listar todas as stashes que você salvou. Este comando é útil quando você deseja ver quais stashes estão atualmente disponíveis e recuperar uma stash específica.
+    O comando `git stash list` é usado para listar todas as stashes que foram salvas. Este comando é útil quando se deseja ver quais stashes estão atualmente disponíveis e recuperar uma stash específica.
     
     ```powershell
 
@@ -554,23 +539,18 @@ O comando `git stash` é usado quando você quer registrar o estado atual do seu
 
 # Descartando Alterações
 
-Então, nosso `git status` tem modificações. E o que queremos fazer é **desfazer essas modificações**.
+O comando `git restore` vai fazer um `Ctrl + Z` no projeto. Assim, as linhas que foram adicionadas sumirão.
 
-> :pushpin: Podemos fazer o `restore` para algum estado específico, mas se não informarmos o estado, isso significa que a restauração será feita sem o que foi modificado. Ou seja, o último commit do nosso branch atual.
->
+```powershell
 
-Então, podemos fazer de `app.js` e de `index.html` um de cada vez. Ou fazer do ponto (`git restore .`). O `git restore .` restaura todo o projeto também. E esse ponto não é um significado especial do `git`.
+git restore .
+git restore --staged .
 
-> :pushpin: Na linha de comando, o ponto significa o diretório atual. Então, estamos fazendo o restore de tudo na pasta atual.
->
-
-Então, esse `git restore` vai fazer um `Ctrl + Z` no nosso projeto. Assim, as linhas que adicionamos no `index` sumiram, e aquelas alterações no nosso `app.js` também sumiram.
+```
 
 - **--staged**
     
-    Note que o próprio `git` já nos mostra que podemos fazer um `restore` do que está em nossa "staging area". Se fizermos `git restore --staged`, significa que estamos modificando algo que está dentro dessa "staging area", dentro de algo que fizemos com o `git add`.
-    
-    Assim, com `git restore --staged app.js`, não desfazemos a alteração, mas **retornamos ao estado anterior**.
+    Note que o próprio `git` já nos mostra que podemos fazer um `restore` do que está em nossa "staging area". Se fizermos `git restore --staged`, significa que foi modificado algo que está dentro dessa "staging area".
     
 - **--source**
     
@@ -580,12 +560,7 @@ Então, esse `git restore` vai fazer um `Ctrl + Z` no nosso projeto. Assim, 
 
     ```
     
-    Quando fazemos isso, ele pega o `index` e o coloca no estado que estava nesse commit.
-    
-    Ao acessar o `index`, observe que tem algumas alterações: O nosso script está em uma linha só, a nossa tag de link não está indentada e os botões também não estão indentados. Ele retornou para esse estado. Se fizermos um `git status`, podemos modificar o arquivo a partir daquele estado e adicionar um novo commit, se quisermos.
-    
-
-E o `git restore` é um dos comandos que veio para substituir o `git checkout`. Uma das coisas que ele fazia é o `restore`. Com o `git checkout -- .`, temos o mesmo resultado.
+    E o `git restore` é um dos comandos que veio para substituir o `git checkout`. Uma das coisas que ele fazia é o `restore`. Com          o `git checkout -- .`, temos o mesmo resultado.
 
 # Criando commits com tags
 
@@ -605,7 +580,7 @@ bc493a6c Corrigindo indentação
 
 Se rodarmos simplesmente `git tag v.0.1.1`, ele cria um commit no nosso `HEAD`. Porém, se quisermos, podemos **criar uma tag para algum commit específico**. Criaremos para o último commit: o "Removendo quebra de linha", tem o código `502afb6`.
 
-Com o código que aparece no começo da linha de commit, podemos criar uma tag para qualquer commit no nosso histórico, através da estrutura: `git tag nome_da_tag código_do_commit`. No caso, executamos o `git tag v0.1.1 502afb6` e, em seguida, ao executarmos o `git log` encontraremos as tags `v0.1.0` e `v0.1.1`.
+Com o código que aparece no começo da linha de commit, podemos criar uma tag para qualquer commit no nosso histórico, através da estrutura: `git tag <nome_da_tag> <código_do_commit>`. No caso, executamos o `git tag v0.1.1 502afb6` e, em seguida, ao executarmos o `git log` encontraremos as tags `v0.1.0` e `v0.1.1`.
 
 ```powershell
 
@@ -617,11 +592,11 @@ Date:   Sat Dec 23 15:12:41 2023 -0300
 
 ```
 
-Se quisermos, podemos enviar a nossa tag para o nosso repositório remoto, o GitHub, com o comando `git push orign v.0.1.0`, que fará o `push` da tag que passamos o nome. Ou podemos executar `git push orign --tags`, que fará o `push` de todas as tags.
+Se quisermos, podemos enviar a nossa tag para o nosso repositório remoto, o GitHub, com o comando `git push origin v.0.1.0`, que fará o `push` da tag que passamos o nome. Ou podemos executar `git push origin --tags`, que fará o `push` de todas as tags.
 
 ## **Criando uma Annotated tag**
 
-Agora queremos criar uma nova tag com uma informação a mais, por exemplo, uma mensagem. Para isso, podemos usar o comando `git tag -a nome_da_tag -m "mensagem da tag"`, sendo o `-a` de *annotated* (anotação) e o `-m` de *message* (mensagem). Chamaremos a tag de `v0.1.1` e passaremos a menagem `"Lançamento da versão 0.1.1"`.
+Agora queremos criar uma nova tag com uma informação a mais, por exemplo, uma mensagem. Para isso, podemos usar o comando `git tag -a nome_da_tag -m "mensagem da tag"`, sendo o `-a` de *annotated* (anotação) e o `-m` de *message* (mensagem). Chamaremos a tag de `v0.1.1` e passaremos a mensagem `"Lançamento da versão 0.1.1"`.
 
 ```powershell
 
