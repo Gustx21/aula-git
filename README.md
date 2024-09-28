@@ -54,7 +54,7 @@ Repare na imagem anterior que o comando `git init` foi executado no terminal d
 Ao executar o comando, note que a saída no terminal foi a mensagem **Initialized empty Git repository in /home/rodrigo/Projetos/alura/meu-projeto/.git/**. Essa mensagem indica que o comando foi executado corretamente e um repositório local do Git foi criado com sucesso nesse diretório. A partir desse ponto, já podemos trabalhar no projeto, adicionando arquivos, realizando modificações e registrando as mudanças no Git.
 
 
->### :warning: Cuidados com o Comando git init
+>### :warning:
 >
 > Aprendemos que o comando *`git init`* serve para criar um novo repositório Git e por isso deve ser executado apenas uma única vez. Ou seja, se um diretório já for um repositório Git, não faz sentido rodar novamente o comando ***git init***. Esse é um erro bastante comum de ser cometido.
 >
@@ -79,7 +79,7 @@ Ao executar o comando, note que a saída no terminal foi a mensagem **Initializ
 > isso significa que o diretório atual **não é** um repositório Git e você pode então executar o comando ***git init***.
 
 # Configurando o Git
-Para configurar seu Git com nome de usuário e e-mail, você usará os seguintes comandos:
+Para configurar Git na sua máquina com nome de usuário e e-mail, você usará os seguintes comandos:
 
 1. **Defina seu nome de usuário**:
    ```bash
@@ -177,7 +177,7 @@ Esse comando tem algumas variações e parâmetros opcionais que podem ser útei
     
     Isso renomeará o repositório remoto de "origin" para "novo-origin".
     
-    > Lembre-se de que o comando git remote é fundamental para a gestão de conexões entre seu repositório local e repositórios remotos, permitindo a colaboração eficiente e o controle de versão. Praticar esses comandos em seu ambiente de desenvolvimento ajudará a consolidar seu entendimento.
+    > Lembre-se de que o comando git remote é fundamental para a gestão de conexões entre seu repositório local e repositórios remotos, permitindo a colaboração eficiente e o controle de versão. Praticar esses comandos em seu ambiente de desenvolvimento ajudará a consolidar seu trabalho.
     > 
 
 # Clonando Repositório
@@ -198,7 +198,7 @@ Lembre-se que, ao clonar um repositório, você também está criando uma conex�
 
 # Salvando Alterações
 
-O `git commit` é um comando que é usado para salvar suas alterações no repositório local. Ele basicamente tira uma “foto” do seu código no momento atual e salva um ponto de referência que você pode reverter para mais tarde, se necessário.
+O `git commit` é um comando que é usado para salvar suas alterações no repositório local. Ele basicamente tira uma "cópia" do seu código no momento atual e salva um ponto de referência que você pode reverter para mais tarde, se necessário.
 
 Um **commit** deve ser realizado sempre que você **finalizar uma tarefa** específica ou **resolver algum bug**. Isso mantém o histórico de commits claro e rastreável, de modo que seja possível entender o que foi feito em cada commit.
 
@@ -228,7 +228,9 @@ git commit --amend -m <mensagem>
 
 O comando indica ao Git que não queremos fazer um novo commit, mas alterar o anterior. Então é só passar o ***-m***, com o texto da mensagem correta.
 
->⚠️ É importante destacar que os comandos do Git que permitem modificar o histórico de commits devem ser utilizados com **prudência** e apenas quando o commit em questão ainda **não foi enviado ao repositório remoto**, ou seja, quando ele existe apenas no seu repositório local.
+>⚠️
+>
+>É importante destacar que os comandos do Git que permitem modificar o histórico de commits devem ser utilizados com **prudência** e apenas quando o commit em questão ainda **não foi enviado ao repositório remoto**, ou seja, quando ele existe apenas no seu repositório local.
 >
 >Modificar um commit que já se tornou público, ou seja, aquele que já foi enviado ao GitHub ou a qualquer outro repositório remoto, pode acarretar problemas consideráveis na colaboração com as outras pessoas e na integridade do histórico de um projeto.
 >
