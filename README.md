@@ -54,7 +54,7 @@ Repare na imagem anterior que o comando `git init` foi executado no terminal d
 Ao executar o comando, note que a saída no terminal foi a mensagem **Initialized empty Git repository in /home/rodrigo/Projetos/alura/meu-projeto/.git/**. Essa mensagem indica que o comando foi executado corretamente e um repositório local do Git foi criado com sucesso nesse diretório. A partir desse ponto, já podemos trabalhar no projeto, adicionando arquivos, realizando modificações e registrando as mudanças no Git.
 
 
->### :warning:
+> [!IMPORTANT]
 >
 > Aprendemos que o comando *`git init`* serve para criar um novo repositório Git e por isso deve ser executado apenas uma única vez. Ou seja, se um diretório já for um repositório Git, não faz sentido rodar novamente o comando ***git init***. Esse é um erro bastante comum de ser cometido.
 >
@@ -176,9 +176,10 @@ Esse comando tem algumas variações e parâmetros opcionais que podem ser útei
     ```
     
     Isso renomeará o repositório remoto de "origin" para "novo-origin".
-    
-    > Lembre-se de que o comando git remote é fundamental para a gestão de conexões entre seu repositório local e repositórios remotos, permitindo a colaboração eficiente e o controle de versão. Praticar esses comandos em seu ambiente de desenvolvimento ajudará a consolidar seu trabalho.
-    > 
+
+> [!NOTE]
+> Lembre-se de que o comando git remote é fundamental para a gestão de conexões entre seu repositório local e repositórios remotos, permitindo a colaboração eficiente e o controle de versão. Praticar esses comandos em seu ambiente de desenvolvimento ajudará a consolidar seu trabalho.
+> 
 
 # Clonando Repositório
 
@@ -228,8 +229,7 @@ git commit --amend -m <mensagem>
 
 O comando indica ao Git que não queremos fazer um novo commit, mas alterar o anterior. Então é só passar o ***-m***, com o texto da mensagem correta.
 
->⚠️
->
+> [!WARNING]
 >É importante destacar que os comandos do Git que permitem modificar o histórico de commits devem ser utilizados com **prudência** e apenas quando o commit em questão ainda **não foi enviado ao repositório remoto**, ou seja, quando ele existe apenas no seu repositório local.
 >
 >Modificar um commit que já se tornou público, ou seja, aquele que já foi enviado ao GitHub ou a qualquer outro repositório remoto, pode acarretar problemas consideráveis na colaboração com as outras pessoas e na integridade do histórico de um projeto.
@@ -313,7 +313,8 @@ O comando indica ao Git que não queremos fazer um novo commit, mas alterar o an
 
     ```
 
-> :pushpin: Quando estamos trabalhando em um projeto utilizando o versionamento Git e a IDE VSCode, ao adicionar ou alterar algum arquivo aparece uma sinalização ao lado do nome desses arquivos no VSCode. Essa sinalização nos ajuda a entender o estado atual dos nossos arquivos do projeto no versionamento Git:
+> [!TIP]
+> Quando estamos trabalhando em um projeto utilizando o versionamento Git e a IDE VSCode, ao adicionar ou alterar algum arquivo aparece uma sinalização ao lado do nome desses arquivos no VSCode. Essa sinalização nos ajuda a entender o estado atual dos nossos arquivos do projeto no versionamento Git:
 >
 > - **M**: A letra M representa o estado *Modified*, do português modificado. Isso significa que o arquivo já existia no repositório, mas que recebeu alguma modificação que ainda não foi registrada no Git.
 > - **U**: A letra U representa o estado *Untracked*, do português não rastreado. Isso significa que o arquivo ainda não existia no repositório e que ainda não teve seu registro (commit) feito no Git.
@@ -613,4 +614,4 @@ Ao executarmos esse comando, temos uma tag com tem informações a mais do que a
 - [Aprenda Git do zero](https://youtu.be/pyM5QLS2h6M?feature=shared)
 
 ## Crédito
-Copyright (C) 2024 by Gustavo André
+Copyright (C) 2024 by @gustx21
